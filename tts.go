@@ -10,6 +10,3 @@ func SpeakText(text string){
 	speak:=ttsdll.NewProc("rapidSpeakText")
 	speak.Call(uintptr(unsafe.Pointer(syscall.StringToUTF16Ptr(text))))
 }
-func Sum(a,b int)int{
-	return a+b
-}
