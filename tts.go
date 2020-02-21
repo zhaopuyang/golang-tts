@@ -5,11 +5,11 @@ import(
 	"unsafe"
 )
 
-func speakText(text string){
+func SpeakText(text string){
 	ttsdll:=syscall.NewLazyDLL("tts.dll")
 	speak:=ttsdll.NewProc("rapidSpeakText")
 	speak.Call(uintptr(unsafe.Pointer(syscall.StringToUTF16Ptr(text))))
 }
-func sum(a,b int)int{
+func Sum(a,b int)int{
 	return a+b
 }
